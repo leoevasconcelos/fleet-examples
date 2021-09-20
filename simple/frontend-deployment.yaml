@@ -33,7 +33,7 @@ metadata:
     allow.http: "false"
 spec:
   rules:
-  - host: guestbook.rancher.dev.webinar.memora.com.br
+  - host: guestbook.dev.rancher.webinar.memora.com.br
     http:
       paths:
         - path: /
