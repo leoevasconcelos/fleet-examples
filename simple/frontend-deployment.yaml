@@ -22,14 +22,13 @@ spec:
             cpu: 100m
             memory: 100Mi
         ports:
-        - containerPort: 80
-        
+        - containerPort: 80      
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  #namespace: go
-  name: go-ingress
+  namespace: default
+  name: guestbook-ingress
   annotations:
     allow.http: "false"
 spec:
@@ -39,5 +38,5 @@ spec:
       paths:
         - path: /
           backend:
-            serviceName: go-service
+            serviceName: guestbook-service
             servicePort: 80
