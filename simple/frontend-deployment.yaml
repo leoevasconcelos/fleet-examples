@@ -23,3 +23,21 @@ spec:
             memory: 100Mi
         ports:
         - containerPort: 80
+        
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  #namespace: go
+  name: go-ingress
+  annotations:
+    allow.http: "false"
+spec:
+  rules:
+  - host: guestbook.rancher.dev.webinar.memora.com.br
+    http:
+      paths:
+        - path: /
+          backend:
+            serviceName: go-service
+            servicePort: 80
