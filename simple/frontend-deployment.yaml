@@ -22,21 +22,4 @@ spec:
             cpu: 100m
             memory: 100Mi
         ports:
-        - containerPort: 80      
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  namespace: default
-  name: guestbook-ingress
-  annotations:
-    allow.http: "false"
-spec:
-  rules:
-  - host: guestbook.dev.rancher.webinar.memora.com.br
-    http:
-      paths:
-        - path: /
-          backend:
-            serviceName: guestbook-service
-            servicePort: 80
+        - containerPort: 80
